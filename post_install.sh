@@ -1,8 +1,15 @@
 #!/bin/sh
 
-# Clone source from official MineOS repository
 mkdir -p /usr/local/games
-git clone git://github.com/hexparrot/mineos-node minecraft || exit
+mkdir -p /usr/local/etc/rc.d
+
+# Clone source from official MineOS repository
+cd /usr/local/games
+git clone git://github.com/hexparrot/mineos-node minecraft 
+if [ $? -ne 0 ] ; then
+  echo "ERROR: Failed to get source from MineOS Repository"
+  exit 1
+fi
 cd minecraft
 
 # Generate Certificates
@@ -26,6 +33,7 @@ mcserver
 EOF
 
 # Enable the service
+chmod +x /usr/local/etc/rc.d/mineos
 sysrc -f /etc/rc.conf mineos_enable="YES"
 
 # Start the service
