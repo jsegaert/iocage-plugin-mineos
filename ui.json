@@ -1,4 +1,4 @@
 {
-	"adminportal": "http://%%IP%%"
+	"adminportal": "http://%%IP%%:8443"
 }
 
