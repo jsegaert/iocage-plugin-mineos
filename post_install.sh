@@ -3,6 +3,11 @@
 mkdir -p /usr/local/games
 mkdir -p /usr/local/etc/rc.d
 
+# Remove previous MineOS install
+if [ -d "/usr/local/games/minecraft" ] ; then
+  rm -rf /usr/local/games/minecraft
+fi
+
 # Clone source from official MineOS repository
 cd /usr/local/games
 git clone git://github.com/hexparrot/mineos-node minecraft 
@@ -14,13 +19,17 @@ cd minecraft
 
 # Generate Certificates
 chmod +x *.sh
-./generate-sslcert.sh
+if [ ! -f "/etc/ssl/certs/mineos.crt" ] ; then 
+  ./generate-sslcert.sh
+fi
 
-# Option #1: Create standard configuration file
-# cp mineos.conf /etc/mineos.conf
-
-# Option #2: use http instead of the standard https
-sed 's/^use_https.*/use_https = false/' mineos.conf > /etc/mineos.conf
+# Create configuration file
+if [ ! -f "/etc/mineos.conf" ] ; then
+  # Option #1: Create standard configuration file
+  # cp mineos.conf /etc/mineos.conf
+  # Option #2: use http instead of the standard https
+  sed 's/^use_https.*/use_https = false/' mineos.conf > /etc/mineos.conf
+fi
 
 # Build
 echo "CXX=c++ npm install" | sh
@@ -52,5 +61,5 @@ cat <<EOF
 MineOS is a server front-end to ease managing Minecraft administrative tasks.
 For more information, see https://github.com/hexparrot/mineos-node
 
-The default logon for the Admin Portal is: mcserver / mcserver
+The default user for the Admin Portal is "mcserver" with password "mcserver"
 EOF
