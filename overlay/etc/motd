@@ -1,0 +1,23 @@
+ __  __ _             ___  ____
+|  \/  (_)_ __   ___ / _ \/ ___|
+| |\/| | | '_ \ / _ \ | | \___ \
+| |  | | | | | |  __/ |_| |___) |
+|_|  |_|_|_| |_|\___|\___/|____/
+
+MineOS is a server front-end to ease managing Minecraft administrative tasks.
+For more info, see https://github.com/hexparrot/mineos-node
+
+DEFAULT SETTINGS:
+
+        The Admin Portal is at http://xxx.yyy.zzz.aaa:8443/
+        The user for the Admin Portal is "mcserver" with password "mcserver"
+        The data directory is /var/games/minecraft
+
+CUSTOMIZATION:
+
+        To change the default settings, edit the configuration file
+        /etc/mineos.conf and restart the mineos service
+
+        User management is done via FreeBSD's standard tools, e.g.
+        - passwd mcserver    To change the default password for user mcserver
+        - adduser            To create additional users
