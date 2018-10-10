@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Set configuration option in /et/mineos.conf
+case $1 in
+	port) 	sed -i '' "s/^socket_port.*/socket_port = $2/" /etc/mineos.conf
+		;;
+	sslmode) sed -i '' "s/^use_https.*/use_https = $2/" /etc/mineos.conf
+ 		;;
+	*) echo "Unknown option" 
+		;;
+esac

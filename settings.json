@@ -1,0 +1,23 @@
+{
+	"servicerestart":"service mineos restart",
+	"serviceget": "/usr/local/bin/mineosget",
+	"serviceset": "/usr/local/bin/mineosset",
+	"options":
+	{
+		"port": {
+			"type": "int",
+			"name": "WebUI Port",
+			"description": "Port for MineOS web admin portal",
+			"range": "1024-32000",
+			"default": "8443",
+			"requirerestart": true
+		},
+		"sslmode": {
+			"type": "bool",
+			"name": "Use SSL",
+			"description": "Use HTTPS to connect to web admin portal",
+			"default": false,
+			"requirerestart": true
+		}
+	}
+}
