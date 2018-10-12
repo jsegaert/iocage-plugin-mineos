@@ -2,18 +2,15 @@
 
 # Get configuration setting from MineOS configuration file
 case $1 in
-	port)	
-		echo `awk -F' = ' '/^socket_port/ { print $2 }' /etc/mineos.conf`
-        	;;
-
-        sslmode)
-		echo `awk -F' = ' '/^use_https/ { print $2 }' /etc/mineos.conf`
-                ;;
-        scheme)
-                sslmode=`awk -F' = ' '/^use_https/ { print $2 }' /etc/mineos.conf`
-                if [ $sslmode = "true" ] ; then echo HTTPS; else echo HTTP; fi
-                ;;
-        *) 
-		echo "Unknown option" ;;
+    port) echo `awk -F' = ' '/^socket_port/ { print $2 }' /etc/mineos.conf`
+          ;;
+    sslmode) echo `awk -F' = ' '/^use_https/ { print $2 }' /etc/mineos.conf`
+             ;;
+    scheme) sslmode=`awk -F' = ' '/^use_https/ { print $2 }' /etc/mineos.conf`
+            if [ $sslmode = "true" ] ; then echo "https"; else echo "http"; fi
+            ;;
+    *) echo "Unknown option">&2
+       exit 1
+       ;;
 esac
 

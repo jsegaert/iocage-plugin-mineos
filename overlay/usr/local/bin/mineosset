@@ -1,11 +1,25 @@
 #!/bin/sh
 
-# Set configuration option in /et/mineos.conf
+# Set configuration option in /etc/mineos.conf
+# Example use: sudo iocage set -P port=8443 sslmode=false mineos
+
+give_message()
+{
+if [ $? -eq 0 ] ; then
+    echo "Changing /etc/mineos.conf"
+else
+    echo "Error updating /etc/mineos.conf">2 ; exit 1
+fi
+}
+
 case $1 in
-	port) 	sed -i '' "s/^socket_port.*/socket_port = $2/" /etc/mineos.conf
-		;;
-	sslmode) sed -i '' "s/^use_https.*/use_https = $2/" /etc/mineos.conf
- 		;;
-	*) echo "Unknown option" 
-		;;
+    port) sed -i '' "s/^socket_port.*/socket_port = $2/" /etc/mineos.conf
+          give_message
+          ;;
+    sslmode) sed -i '' "s/^use_https.*/use_https = $2/" /etc/mineos.conf
+             give_message
+             ;;
+    *) echo "Unknown option">&2 ; exit 1
+            ;;
 esac
+
