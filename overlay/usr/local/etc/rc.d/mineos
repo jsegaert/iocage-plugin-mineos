@@ -19,7 +19,6 @@ load_rc_config $name
  
 pidfile="/var/run/mineos.pid"
 command="/usr/local/bin/node"
-procname="mineos"
  
 start_precmd="export PATH=$PATH:/usr/local/bin"
 command_args="/usr/local/games/minecraft/service.js start"
