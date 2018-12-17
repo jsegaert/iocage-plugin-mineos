@@ -22,6 +22,9 @@ command="/usr/local/bin/node"
  
 start_precmd="export PATH=$PATH:/usr/local/bin"
 command_args="/usr/local/games/minecraft/service.js start"
+
+status_cmd="/usr/local/bin/node /usr/local/games/minecraft/service.js status"
+stop_cmd="/usr/local/bin/node /usr/local/games/minecraft/service.js stop"
  
 extra_commands="update"
 update_cmd="mineos_update"
