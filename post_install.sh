@@ -43,6 +43,11 @@ EOF
 chmod +x /usr/local/etc/rc.d/mineos
 sysrc -f /etc/rc.conf mineos_enable="YES"
 
+# temporary hack to revert to Java 8.181.13
+pkg delete -y openjdk8-jre
+fetch https://github.com/jsegaert/binaries/releases/download/v0.1/openjdk8-jre-8.181.13.txz
+pkg add openjdk8-jre-8.181.13.txz
+
 # Start the service
 service mineos start
 
