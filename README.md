@@ -7,11 +7,11 @@ For more info on the project, see [https://github.com/hexparrot/mineos-node](htt
 ## To install this Plugin
 Download the plugin manifest file to your local file system.
 ```
-https://raw.githubusercontent.com/jsegaert/iocage-my-plugins/11.2-RELEASE/mineos.json
+fetch https://raw.githubusercontent.com/jsegaert/iocage-my-plugins/12.0-RELEASE/mineos.json
 ```
 Install the plugin.  Adjust host interface and IP address as needed.  
 ```
-iocage fetch -P -n mineos.json ip4_addr="em0|192.168.0.100/24"
+iocage fetch -P mineos.json -n mineos ip4_addr="em0|192.168.0.100/24" vnet=off
 ```
 
 ## Default settings
