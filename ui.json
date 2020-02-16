@@ -1,5 +1,9 @@
 {
-	"adminportal": "http://%%IP%%:8443",
-	"docurl": "https://github.com/jsegaert/iocage-plugin-mineos/tree/12.0-RELEASE#iocage-plugin-mineos"
+	"adminportal": "%%S%%://%%IP%%:%%P%%",
+	"adminportal_placeholders": {
+		"%%S%%": "scheme",
+		"%%P%%": "port"
+		},
+	"docurl": "https://github.com/jsegaert/iocage-plugin-mineos/tree/master#iocage-plugin-mineos"
 }
 
