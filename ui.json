@@ -1,5 +1,5 @@
 {
 	"adminportal": "http://%%IP%%:8443",
-	"docurl": "https://github.com/jsegaert/iocage-plugin-mineos/tree/master#iocage-plugin-mineos"
+	"docurl": "https://github.com/jsegaert/iocage-plugin-mineos"
 }
 

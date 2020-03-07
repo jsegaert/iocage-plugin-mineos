@@ -22,6 +22,7 @@ chmod +x *.sh
 if [ ! -f "/etc/ssl/certs/mineos.crt" ] ; then 
   ./generate-sslcert.sh
 fi
+echo
 
 # Create configuration file
 if [ ! -f "/etc/mineos.conf" ] ; then
@@ -40,6 +41,7 @@ mcserver
 EOF
 
 # Enable the service
+chmod +x *.sh
 chmod +x /usr/local/etc/rc.d/mineos
 sysrc -f /etc/rc.conf mineos_enable="YES"
 
@@ -53,7 +55,7 @@ if [ $? -ne 0 ] ; then
 fi
 
 echo
-cat <<EOF
+cat <<EOF > /root/PLUGIN_INFO
 #---------------------------------------------------------------------#
 # Getting started with the MineOs plugin
 #---------------------------------------------------------------------#
@@ -63,3 +65,5 @@ For more information, see https://github.com/hexparrot/mineos-node
 
 The default user for the Admin Portal is "mcserver" with password "mcserver"
 EOF
+
+cat /root/PLUGIN_INFO
