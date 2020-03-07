@@ -42,3 +42,16 @@ if [ $? -ne 0 ] ; then
   exit 1
 fi
 
+echo
+cat <<EOF > /root/PLUGIN_INFO
+#---------------------------------------------------------------------#
+# Getting started with the MineOs plugin
+#---------------------------------------------------------------------#
+
+MineOS is a server front-end to ease managing Minecraft administrative tasks.
+For more information, see https://github.com/hexparrot/mineos-node
+
+The default user for the Admin Portal is "mcserver" with password "mcserver"
+EOF
+
+cat /root/PLUGIN_INFO
