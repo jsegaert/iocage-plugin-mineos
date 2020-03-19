@@ -21,3 +21,4 @@ CUSTOMIZATION:
         User management is done via FreeBSD's standard tools, e.g.
         - passwd mcserver    To change the default password for user mcserver
         - adduser            To create additional users
+
