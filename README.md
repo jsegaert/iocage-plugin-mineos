@@ -7,7 +7,7 @@ For more info on the project, see [https://github.com/hexparrot/mineos-node](htt
 ## To install this Plugin
 Download the plugin manifest file to your local file system.
 ```
-fetch https://raw.githubusercontent.com/jsegaert/iocage-my-plugins/11.3-RELEASE/mineos.json
+fetch https://raw.githubusercontent.com/jsegaert/iocage-my-plugins/12.1-RELEASE/mineos.json
 ```
 Install the plugin.  Adjust the network settings as needed.
 ```
