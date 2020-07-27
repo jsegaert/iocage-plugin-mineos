@@ -10,7 +10,7 @@ fi
 
 # Clone source from official MineOS repository
 cd /usr/local/games
-git clone git://github.com/hexparrot/mineos-node minecraft 
+git clone git://github.com/hexparrot/mineos-node --quiet --depth 1 minecraft
 if [ $? -ne 0 ] ; then
   echo "ERROR: Failed to get source from MineOS Repository"
   exit 1
@@ -20,7 +20,7 @@ cd minecraft
 # Generate Certificates
 chmod +x *.sh
 if [ ! -f "/etc/ssl/certs/mineos.crt" ] ; then 
-  ./generate-sslcert.sh
+  ./generate-sslcert.sh > /dev/null 2>&1
 fi
 echo
 
