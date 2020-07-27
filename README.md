@@ -1,5 +1,5 @@
-# iocage-plugin-mineos
-This plugin provides a convenient way to install MineOS in a FreeBSD jail using the [iocage](https://github.com/iocage/iocage) jail manager.
+# MineOS - Minecraft server management
+This plugin provides a convenient way to install the node.js implementation of MineOS in a FreeBSD jail using the [iocage](https://github.com/iocage/iocage) jail manager.
 
 MineOS is a web front-end to set up and manage Minecraft servers with a few mouse clicks.
 For more info on the project, see [https://github.com/hexparrot/mineos-node](https://github.com/hexparrot/mineos-node)
