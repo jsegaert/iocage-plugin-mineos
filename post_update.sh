@@ -25,8 +25,12 @@ if [ ! -f "/etc/mineos.conf" ] ; then
   sed 's/^use_https.*/use_https = false/' mineos.conf > /etc/mineos.conf
 fi
 
+# Install patched version of node-userid
+npm install runesoeknudsen/node-userid
+
 # Build
 echo "CXX=c++ npm install" | sh
+npm audit fix
 
 # Enable the service
 chmod +x *.sh
