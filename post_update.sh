@@ -30,7 +30,6 @@ npm install runesoeknudsen/node-userid
 
 # Build
 echo "CXX=c++ npm install" | sh
-npm audit fix
 
 # Enable the service
 chmod +x *.sh
