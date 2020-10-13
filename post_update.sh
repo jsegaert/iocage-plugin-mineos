@@ -10,7 +10,8 @@ fi
 
 # Clone source from official MineOS repository
 cd /usr/local/games
-git clone git://github.com/hexparrot/mineos-node --quiet --depth 1 minecraft
+#git clone git://github.com/hexparrot/mineos-node --quiet --depth 1 minecraft
+git clone --single-branch --branch fix_RangeError git://github.com/jsegaert/mineos-node.git --quiet --depth 1 minecraft
 if [ $? -ne 0 ] ; then
   echo "ERROR: Failed to get source from MineOS Repository"
   exit 1
@@ -26,7 +27,7 @@ if [ ! -f "/etc/mineos.conf" ] ; then
 fi
 
 # Install patched version of node-userid
-npm install runesoeknudsen/node-userid
+npm install jsegaert/node-userid
 
 # Build
 echo "CXX=c++ npm install" | sh
