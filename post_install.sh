@@ -33,7 +33,7 @@ if [ ! -f "/etc/mineos.conf" ] ; then
 fi
 
 # Install patched version of node-userid
-npm install runesoeknudsen/node-userid
+npm install jsegaert/node-userid
 
 # Build
 echo "CXX=c++ npm install" | sh
