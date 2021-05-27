@@ -30,9 +30,11 @@ extra_commands="update"
 update_cmd="mineos_update"
 mineos_update() 
 {
+    /usr/local/bin/git --git-dir=/usr/local/games/minecraft/.git --work-tree=/usr/local/games/minecraft stash
     /usr/local/bin/git --git-dir=/usr/local/games/minecraft/.git --work-tree=/usr/local/games/minecraft pull
     ${start_precmd}
-    CXX=c++ /usr/local/bin/npm --prefix /usr/local/games/minecraft update --python=/usr/local/bin/python2.7
+    /usr/local/bin/npm --prefix /usr/local/games/minecraft install jsegaert/node-userid --python=/usr/local/bin/python3.8
+    CXX=c++ /usr/local/bin/npm --prefix /usr/local/games/minecraft update --python=/usr/local/bin/python3.8
 }
  
 run_rc_command "$1"
