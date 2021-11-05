@@ -32,7 +32,9 @@ if [ ! -f "/etc/mineos.conf" ] ; then
   sed 's/^use_https.*/use_https = false/' mineos.conf > /etc/mineos.conf
 fi
 
-# Install patched version of node-userid
+# Temporary hacks, as workaround for building node-userid
+pkg remove -y node npm
+pkg install -y node14 npm-node14
 npm install jsegaert/node-userid
 
 # Build
