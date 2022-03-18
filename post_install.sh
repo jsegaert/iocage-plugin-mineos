@@ -10,7 +10,7 @@ fi
 
 # Clone source from official MineOS repository
 cd /usr/local/games
-git clone git://github.com/hexparrot/mineos-node --quiet --depth 1 minecraft
+git clone https://github.com/hexparrot/mineos-node --quiet --depth 1 minecraft
 if [ $? -ne 0 ] ; then
   echo "ERROR: Failed to get source from MineOS Repository"
   exit 1
